@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 2 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:Times;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{mso-style-link:"Body Text Indent Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:1.0cm;
+	text-indent:-1.0cm;
+	font-size:12.0pt;
+	font-family:Times;}
+span.BodyTextIndentChar
+	{mso-style-name:"Body Text Indent Char";
+	mso-style-link:"Body Text Indent";
+	font-family:Times;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-CA link=blue vlink="#954F72" style='word-wrap:break-word'>
+<div class="WordSection1">
+<p class="MsoNormal"><b><span style="font-size: 14.0pt; font-family: 'Times New Roman',serif;" lang="EN-US">CS 2263</span></b></p>
+<p class="MsoNormal"><b><span style="font-size: 14.0pt; font-family: 'Times New Roman',serif;" lang="EN-US">Assignment 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ver. 2.0)</span></b></p>
+<p class="MsoNormal"><b><span style="font-size: 14.0pt; font-family: 'Times New Roman',serif;" lang="EN-US">Due: April 12, 2021 (before midnight) </span></b></p>
+<p class="MsoNormal" style="text-align: justify;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">_______________________________________________________</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 0cm;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 7.1pt;"><b><span style="font-family: 'Times New Roman',serif; color: #0070c0;" lang="EN-US">Additional instructions:</span></b><span style="font-family: 'Times New Roman',serif; color: #0070c0;" lang="EN-US"><br />This assignment is to be completed and submitted by each student individually. The code for processing the input file and processing the html tags is to be completed individually. <u>You may (and you are encouraged to do so)</u> discuss with your classmates, share, copy, any part of the code implementing the linked list processing (e.g. definitions of structs, any function creating, searching, printing, deleting etc. a linked list). </span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 7.1pt;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 7.1pt;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US"><br /></span><i><span style="font-family: 'Times New Roman',serif;">Structs, linked lists</span></i></p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 7.1pt;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">Develop and test <b>a new version</b> of the utility program from Assignments 2 and 3 for examining the HTML tags in HTML files, and call this new version &ldquo;htags4&rdquo;. &nbsp;The program inputs and analyses an HTML file and prints of the list of the HTML <i>tags names</i>. Use the same <i>simplified</i> definition of the HTML tag names given in Assignment 2. </span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 7.1pt;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">The new utility program htags4 should read the HTML file specified as the command line parameter as in Assignment 3, for example to run your program on A4.htm use:</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 18.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 7.1pt;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">$ ./htags4 A4.htm<br /><br />Here are the new requirements for the implementation of htags2:</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: -21.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 64.1pt;"><span style="font-family: Symbol;">&middot;</span><span style="font-size: 7.0pt; font-family: 'Times New Roman',serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 'Times New Roman',serif;" lang="EN-US">Read from the file specified as the command line argument and output names of all unique HTML tags detected (i.e. without printing duplicates).</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: -21.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 64.1pt;"><span style="font-family: Symbol;" lang="EN-US">&middot;</span><span style="font-size: 7.0pt; font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 'Times New Roman',serif;" lang="EN-US">Your program must consist of at least TWO programming modules (C functions) stored in separate files.</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: -18.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 61.1pt;"><span style="font-family: Symbol;" lang="EN-US">&middot;</span><span style="font-size: 7.0pt; font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: 'Times New Roman',serif;" lang="EN-US">In your implementation store the detected tags in a linked list and use the definition of the list node (</span><span style="font-family: Courier;" lang="EN-US">struct</span><span style="font-family: 'Times New Roman',serif;" lang="EN-US">) from the following header file:</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: -18.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 61.1pt;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">#ifndef LIST_H</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">#define LIST_H</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">typedef struct listnode</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">{</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">&nbsp; struct listnode * next;</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">&nbsp; char * tagName</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">} Node;</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">Node * Node_construct(char * tag);</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">/* create a new object with attributes:&nbsp;</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">string tag */</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">Node * List_search_and_insert(Node * head, char * tag);</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">/* search for the tag in a linked list starting at head, and if not found then insert a new node for this tag, and when finished return the new head */</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">void List_print(Node * head);</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">/* print the tags stored in the linked list */</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-left: 61.1pt;"><span style="font-size: 8.0pt; font-family: 'Courier New';" lang="EN-US">#endif</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: -21.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 64.1pt;">&nbsp;</p>
+<p class="MsoBodyTextIndent" style="margin-top: 6.0pt; line-height: 12.0pt;">&nbsp;</p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 0cm;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US"><br />The assignment submission should consist of the following parts:</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: -18.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 43.1pt;"><b><span style="font-family: 'Times New Roman',serif;" lang="EN-US">1.</span></b><span style="font-size: 7.0pt; font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 'Times New Roman',serif;">Show the complete source code of every programming module. </span></p>
+<p class="MsoBodyTextIndent" style="text-indent: -18.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 43.1pt;"><b><span style="font-family: 'Times New Roman',serif;" lang="EN-US">2.</span></b><span style="font-size: 7.0pt; font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 'Times New Roman',serif;">Show the output from running htags4 program on the following text: &lt;html&gt; &lt;b&gt; TEST &lt;/b&gt; &lt;/html&gt;</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: -18.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 43.1pt;"><b><span style="font-family: 'Times New Roman',serif;" lang="EN-US">3.</span></b><span style="font-size: 7.0pt; font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 'Times New Roman',serif;">Show the output from running htags4 program on this HTML file, i.e. A4.htm, describing this assignment (to avoid the D2L web page formatting you should download A4.htm to your computer).</span><span style="font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: -18.0pt; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 43.1pt;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;</span></p>
+<p class="MsoBodyTextIndent" style="margin-top: 6.0pt; text-indent: 0cm; line-height: 12.0pt;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 0cm; line-height: 12.0pt; margin: 6.0pt 0cm .0001pt 7.1pt;"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">Type the answers to all questions (use headings indicating the question number) in to a word processor and store them in a <b>single pdf file</b> (include a preamble (title, section) with your name, student number, course number etc.). Please number all the pages! Submit this SINGLE pdf file on D2L as the Assignment 4 by the due date indicated in the D2L dropbox.</span></p>
+<p class="MsoNormal"><span style="font-family: 'Times New Roman',serif;" lang="EN-US">&nbsp;</span></p>
+</div>
+</body>
+
+</html>
